@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <title>To-do list</title>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/locales/fr.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+
+          events: <%- JSON.stringify(tasksList) %>,
+          headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay",
+          },
+          initialView: "dayGridMonth",
+          locale: "fr",
+        });
+        calendar.render();
+      });
+    </script>
+  </head>
+  <body>
+    <a href="/">Accueil</a>
+    <div id="calendar"></div>
+    <div>
+      <form action="/delete" method="post">
+        <span>Supprimer une tâche</span>
+        <div>
+          <label for="title">Titre</label>
+          <select name="taskSelected" id="taskSelected">
+            <% tasksList.forEach((task) => { %>
+            <!-- prettier-ignore -->
+            <option value=<%- task.title %>><%= task.title %></option>
+            <% }) %>
+          </select>
+        </div>
+        <input type="submit" value="Envoyer" />
+      </form>
+    </div>
+  </body>
+</html>

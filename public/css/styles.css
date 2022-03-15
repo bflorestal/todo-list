@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(0, 102, 204);
+}
+
+main,
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+section {
+  padding-top: 1rem;
+}
+
+section div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1280px;
+  width: 100%;
+  margin-bottom: 0.625rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 240px;
+  width: 100%;
+  flex-direction: column;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.625rem;
+}
+
+form div > * {
+  width: 50%;
+}
+
+span {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+}
+
+input[type="submit"] {
+  padding: 4px;
+}

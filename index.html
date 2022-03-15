@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <title>To-do list</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div>
+          <h1>TodoList</h1>
+        </div>
+        <div>
+          <a href="/calendar">Accéder au calendrier</a>
+        </div>
+        <div>
+          <form action="/" method="post">
+            <span>Créer une tâche</span>
+            <div>
+              <label for="title">Titre</label>
+              <input type="text" name="title" id="title" required />
+            </div>
+            <div>
+              <label for="start">Date de début</label>
+              <input type="date" name="start" id="start" required />
+            </div>
+            <div>
+              <label for="end">Date de fin</label>
+              <input type="date" name="end" id="end" required />
+            </div>
+            <input type="submit" value="Envoyer" />
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
